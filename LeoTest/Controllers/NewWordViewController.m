@@ -12,10 +12,9 @@
 
 static NSString *const NewWordViewControllerTitle = @"Добавить слово";
 
-@interface NewWordViewController () <AddWordViewDelegate>
+@interface NewWordViewController () <AddWordViewDelegate, WordsStoreManageDelegate>
 
 @property (nonatomic, strong) AddWordView *addWordView;
-@property (nonatomic, strong) WordsStoreManager *storeManager;
 
 @end
 
@@ -27,7 +26,7 @@ static NSString *const NewWordViewControllerTitle = @"Добавить слов�
 	self.view.backgroundColor = [UIColor whiteColor];
 	self.navigationItem.title = NewWordViewControllerTitle;
 
-	self.storeManager = [[WordsStoreManager alloc] init];
+	[[WordsStoreManager sharedStoreManager] addDelegate:self];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -55,9 +54,14 @@ static NSString *const NewWordViewControllerTitle = @"Добавить слов�
 
 -(void)addWord:(NSString *)word
 {
-	[WordsStoreManager addWord:word withCompletionHandler:^(BOOL result, NSError *error) {
+	[[WordsStoreManager sharedStoreManager] addWord:word];
+}
 
-	}];
+#pragma mark - WordsStoreManageDelegate
+
+-(void)newWordAddedWithResult:(BOOL)result error:(NSString *)error
+{
+	
 }
 
 #pragma mark - Constrains

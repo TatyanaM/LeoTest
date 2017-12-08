@@ -10,7 +10,44 @@
 #import "Word+CoreDataClass.h"
 #import <MagicalRecord/MagicalRecord.h>
 
+@interface WordsStoreManager ()
+
+@property (nonatomic, strong, readwrite) NSMutableArray *delegates;
+
+@end
+
 @implementation WordsStoreManager
+
+@synthesize delegates;
+
++ (WordsStoreManager *)sharedStoreManager
+{
+	static dispatch_once_t onceToken;
+	static WordsStoreManager *sharedManager = nil;
+	dispatch_once(&onceToken, ^{
+		sharedManager = [[WordsStoreManager alloc] init];
+	});
+	return sharedManager;
+}
+
+- (instancetype)init
+{
+	self = [super init];
+	if (self) {
+		delegates = [NSMutableArray new];
+	}
+	return self;
+}
+- (void)addDelegate:(id<WordsStoreManageDelegate>)delegate
+{
+	NSValue *value = [NSValue valueWithNonretainedObject:delegate];
+	[delegates addObject:value];
+}
+
+- (void)removeDelegate:(id<WordsStoreManageDelegate>)delegate
+{
+	[delegates removeAllObjects];
+}
 
 -(void)addWord:(NSString *)text
 {

@@ -17,11 +17,11 @@
 
 @interface WordsStoreManager : NSObject
 
-@property (nonatomic, weak) id <WordsStoreManageDelegate> delegate;
++ (WordsStoreManager *)sharedStoreManager;
+- (void)addDelegate:(id<WordsStoreManageDelegate>)delegate;
+- (void)removeDelegate:(id<WordsStoreManageDelegate>)delegate;
 
 -(void)addWord:(NSString *)text;
-//+(NSArray *)createWordsWithData:(NSArray *)words;
-
 -(void)fetchVocabulary;
 
 @end

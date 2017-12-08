@@ -14,11 +14,12 @@
 
 static NSString *const MainViewControllerTitle = @"Словарь";
 
-@interface MainViewController ()
+@interface MainViewController () <WordsStoreManageDelegate>
 
 //data
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) WordsTableViewDataSource *tableViewDataSource;
+@property (nonatomic, strong) WordsStoreManager *storeManager;
 
 //search
 @property (nonatomic, strong) WordsSearchBar *searchBar;
@@ -33,6 +34,8 @@ static NSString *const MainViewControllerTitle = @"Словарь";
 	self.navigationItem.title = MainViewControllerTitle;
 	UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithImage: [UIImage imageNamed:@"plus"] style:UIBarButtonItemStylePlain target:self action:@selector(addNewWord)];
 	self.navigationItem.rightBarButtonItem = addItem;
+
+	[[WordsStoreManager sharedStoreManager] addDelegate:self];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -58,18 +61,21 @@ static NSString *const MainViewControllerTitle = @"Словарь";
 
 - (void)fetchVocabulary
 {
-	[WordsStoreManager fetchWordsWithCompletionHandler:^(NSArray *words) {
-
-			self.tableViewDataSource.words = words;
-			[self.tableView reloadData];
-	
-	}];
+	[[WordsStoreManager sharedStoreManager] fetchVocabulary];
 }
 
 - (void)addNewWord
 {
 	NewWordViewController *newWordController = [[NewWordViewController alloc] init];
 	[self.navigationController pushViewController:newWordController animated:YES];
+}
+
+#pragma mark - WordsStoreManageDelegate
+
+-(void)vocabularyLoaded:(NSArray *)words
+{
+	self.tableViewDataSource.words = words;
+	[self.tableView reloadData];
 }
 
 #pragma mark - UI
