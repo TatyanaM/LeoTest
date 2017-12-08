@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target ‘LeoTest’ do
+ pod 'Masonry'
+ pod 'AFNetworking' , '~> 3.0'
+ pod 'AFNetworking-Synchronous/3.x'
+ pod 'MagicalRecord'
+end
