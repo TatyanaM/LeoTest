@@ -8,7 +8,7 @@
 
 #import "WordsTableViewDataSource.h"
 #import "WordCell.h"
-#import "Word+CoreDataClass.h"
+#import "Word.h"
 
 @implementation WordsTableViewDataSource
 
@@ -22,7 +22,8 @@
 
 	Word *word = [self.words objectAtIndex:indexPath.row];
 	newCell.word = word.word;
-	newCell.translation = word.translation;
+	NSArray *arrayOfTranslations = [NSKeyedUnarchiver unarchiveObjectWithData:word.translations];
+	newCell.translation = [arrayOfTranslations componentsJoinedByString:@","];
 	return newCell;
 }
 

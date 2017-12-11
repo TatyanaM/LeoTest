@@ -42,18 +42,13 @@ static NSString * const Yandex_APIKey = @"trnsl.1.1.20171207T110424Z.9ace9422795
 {
     NSString *error = nil;
     NSString *langDetectUrlString = [NSString stringWithFormat:@"%@?key=%@&text=%@", langDetectionURL, Yandex_APIKey, self.text];
-    id data = [NetworkAPI startSyncLoadingWithURL:langDetectUrlString params:nil error:error];
-    if (self.cancelled)
-        return;
-    
-    NSDictionary *response = (NSDictionary *)data;
-    NSNumber *code = response[@"code"];
-    if ([code isEqualToNumber:@200]) {
-        self.textLanguage = response[@"lang"];
-        [self translateWord];
-    } else
-    {
-        error = response[@""];
+	NSDictionary *responseData = [NetworkAPI startSyncLoadingWithURL:langDetectUrlString params:nil error:error];
+
+	if ([self isSuccessfulResponse:responseData]) {
+		self.textLanguage = responseData[@"lang"];
+		[self translateWord];
+	} else {
+        error = responseData[@""];
         if ([self.delegate respondsToSelector:@selector(translationFailedWithError:)])
             [self.delegate translationFailedWithError:error];
     }
@@ -62,27 +57,30 @@ static NSString * const Yandex_APIKey = @"trnsl.1.1.20171207T110424Z.9ace9422795
 - (void)translateWord
 {
     NSString *error = nil;
-    NSString *translateLang = [_textLanguage isEqualToString:@"en"] ? @"en-ru" : @"ru-en";
+    NSString *translateLang = [_textLanguage isEqualToString:@"en"] ? @"en-ru" : @"ru-en"; 
     NSString *encodedText = [self.text stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     NSString *urlString = [NSString stringWithFormat:@"%@?key=%@&text=%@&lang=%@", translateURL, Yandex_APIKey, encodedText, translateLang];
-    id data = [NetworkAPI startSyncLoadingWithURL:urlString params:nil error:error];
-    if (self.cancelled)
-        return;
-    
-    NSDictionary *response = (NSDictionary *)data;
-    NSNumber *code = response[@"code"];
-    if ([code isEqualToNumber:@200]) {
-        NSArray *translations = response[@"text"];
-        if (translations)
-        {
-            if ([self.delegate respondsToSelector:@selector(translationFinishedWithResult:)])
-                [self.delegate translationFinishedWithResult:translations];
-        } else
-        {
-            if ([self.delegate respondsToSelector:@selector(translationFailedWithError:)])
-                [self.delegate translationFailedWithError:error];
-        }
-    }
+    NSDictionary *responseData = [NetworkAPI startSyncLoadingWithURL:urlString params:nil error:error];
+
+	if ([self isSuccessfulResponse:responseData]) {
+		NSArray *translations = responseData[@"text"];
+		if (translations)
+		{
+			if ([self.delegate respondsToSelector:@selector(translationFinishedWithResult:)])
+				[self.delegate translationFinishedWithResult:translations];
+		}
+	} else {
+		if ([self.delegate respondsToSelector:@selector(translationFailedWithError:)])
+			[self.delegate translationFailedWithError:error];
+	}
+}
+
+- (BOOL)isSuccessfulResponse:(NSDictionary *)responseData
+{
+	if ([responseData isKindOfClass:[NSDictionary class]] && [responseData[@"code"] isEqualToNumber:@200])
+		return YES;
+	else
+		return NO;
 }
 
 @end

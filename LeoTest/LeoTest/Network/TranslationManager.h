@@ -7,21 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TranslationManagerDelegate.h"
 #import "OperationsManager.h"
 
 typedef void (^ItemCompletionHandler)(id items, NSError *error);
 
-@protocol TranslationManagerDelegate <NSObject>
-@required
--(void)translationFinishedWithError:(NSString *)error;
--(void)translationsLoaded:(NSArray *)translations;
+@protocol TranslationManagerDelegate;
 
-@end
-
+/**
+ Класс-менеджер ответственный за процесс перевода слова
+ */
 @interface TranslationManager : NSObject <TranslateOperationDelegate>
 
 @property (nonatomic, assign) id <TranslationManagerDelegate> delegate;
 
+/**
+ Запускает процесс перевода слова с заданным источником перевода
+
+ @param text переводимое слово
+ @param source источник перевода (Яндекс, Гугл, ...)
+ */
 -(void)translateWord:(NSString *)text withTranslationSource:(TranslationSource)source;
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		091E282C1FDC3CFE00A2D227 /* TranslationsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 091E282B1FDC3CFE00A2D227 /* TranslationsTableViewDataSource.m */; };
+		09550B361FDEA9A1008C4495 /* Word+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C54ACD1FDC1B9D0073BA0F /* Word+CoreDataProperties.m */; };
 		09AE5ECE1FDC890200C8AC28 /* AlertViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AE5ECD1FDC890200C8AC28 /* AlertViewHelper.m */; };
 		09AE5ED01FDD77AA00C8AC28 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AE5ECF1FDD77AA00C8AC28 /* MainViewController.xib */; };
 		09AE5ED21FDD7B7800C8AC28 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AE5ED11FDD7B7800C8AC28 /* LoadingView.xib */; };
@@ -20,7 +21,6 @@
 		09C54AD21FDC1BB70073BA0F /* TranslationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C54AC31FDC1AF90073BA0F /* TranslationManager.m */; };
 		09C54AD31FDC1BB70073BA0F /* WordsStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF7351FDA9C9A00383359 /* WordsStoreManager.m */; };
 		09C54AD41FDC1BB70073BA0F /* WordsSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 095618381FDB2B0000AE2DD4 /* WordsSearchManager.m */; };
-		09C54AD61FDC1BB70073BA0F /* Word+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C54ACD1FDC1B9D0073BA0F /* Word+CoreDataProperties.m */; };
 		09C54AD71FDC1BB70073BA0F /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF71D1FDA7DFA00383359 /* LoadingView.m */; };
 		09C54AD91FDC1BB70073BA0F /* WordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF7131FDA797300383359 /* WordCell.m */; };
 		09C54ADB1FDC1BB70073BA0F /* WordsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF70B1FDA78D400383359 /* WordsTableViewDataSource.m */; };
@@ -48,6 +48,9 @@
 /* Begin PBXFileReference section */
 		091E282A1FDC3CFE00A2D227 /* TranslationsTableViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TranslationsTableViewDataSource.h; path = Datasource/TranslationsTableViewDataSource.h; sourceTree = "<group>"; };
 		091E282B1FDC3CFE00A2D227 /* TranslationsTableViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TranslationsTableViewDataSource.m; path = Datasource/TranslationsTableViewDataSource.m; sourceTree = "<group>"; };
+		09550B321FDEA3F5008C4495 /* WordsStoreManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordsStoreManagerDelegate.h; sourceTree = "<group>"; };
+		09550B331FDEA420008C4495 /* WordsSearchManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordsSearchManagerDelegate.h; sourceTree = "<group>"; };
+		09550B341FDEA446008C4495 /* TranslationManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TranslationManagerDelegate.h; path = Network/TranslationManagerDelegate.h; sourceTree = "<group>"; };
 		095618371FDB2B0000AE2DD4 /* WordsSearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsSearchManager.h; sourceTree = "<group>"; };
 		095618381FDB2B0000AE2DD4 /* WordsSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsSearchManager.m; sourceTree = "<group>"; };
 		09AE5ECC1FDC890200C8AC28 /* AlertViewHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertViewHelper.h; sourceTree = "<group>"; };
@@ -88,9 +91,9 @@
 		09C54AC21FDC1AF90073BA0F /* YandexTranslateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YandexTranslateOperation.m; path = Network/YandexTranslateOperation.m; sourceTree = "<group>"; };
 		09C54AC31FDC1AF90073BA0F /* TranslationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TranslationManager.m; path = Network/TranslationManager.m; sourceTree = "<group>"; };
 		09C54AC81FDC1B720073BA0F /* LeoTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LeoTest.xcdatamodel; sourceTree = "<group>"; };
-		09C54ACA1FDC1B9D0073BA0F /* Word+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Word+CoreDataClass.m"; path = "Database/Word+CoreDataClass.m"; sourceTree = SOURCE_ROOT; };
+		09C54ACA1FDC1B9D0073BA0F /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Word.m; path = Database/Word.m; sourceTree = SOURCE_ROOT; };
 		09C54ACB1FDC1B9D0073BA0F /* Word+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Word+CoreDataProperties.h"; path = "Database/Word+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
-		09C54ACC1FDC1B9D0073BA0F /* Word+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Word+CoreDataClass.h"; path = "Database/Word+CoreDataClass.h"; sourceTree = SOURCE_ROOT; };
+		09C54ACC1FDC1B9D0073BA0F /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Word.h; path = Database/Word.h; sourceTree = SOURCE_ROOT; };
 		09C54ACD1FDC1B9D0073BA0F /* Word+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Word+CoreDataProperties.m"; path = "Database/Word+CoreDataProperties.m"; sourceTree = SOURCE_ROOT; };
 		09C54AE11FDC1C230073BA0F /* OperationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationsManager.h; sourceTree = "<group>"; };
 		09C54AE21FDC1C240073BA0F /* OperationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationsManager.m; sourceTree = "<group>"; };
@@ -242,8 +245,10 @@
 		09BFF7251FDA8D3300383359 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				09550B321FDEA3F5008C4495 /* WordsStoreManagerDelegate.h */,
 				09BFF7341FDA9C9A00383359 /* WordsStoreManager.h */,
 				09BFF7351FDA9C9A00383359 /* WordsStoreManager.m */,
+				09550B331FDEA420008C4495 /* WordsSearchManagerDelegate.h */,
 				095618371FDB2B0000AE2DD4 /* WordsSearchManager.h */,
 				095618381FDB2B0000AE2DD4 /* WordsSearchManager.m */,
 			);
@@ -253,8 +258,8 @@
 		09BFF7371FDAA11E00383359 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				09C54ACC1FDC1B9D0073BA0F /* Word+CoreDataClass.h */,
-				09C54ACA1FDC1B9D0073BA0F /* Word+CoreDataClass.m */,
+				09C54ACC1FDC1B9D0073BA0F /* Word.h */,
+				09C54ACA1FDC1B9D0073BA0F /* Word.m */,
 				09C54ACB1FDC1B9D0073BA0F /* Word+CoreDataProperties.h */,
 				09C54ACD1FDC1B9D0073BA0F /* Word+CoreDataProperties.m */,
 				09C54AC71FDC1B720073BA0F /* LeoTest.xcdatamodeld */,
@@ -269,6 +274,7 @@
 				09C54AC01FDC1AF80073BA0F /* NetworkAPI.h */,
 				09C54AC11FDC1AF90073BA0F /* NetworkAPI.m */,
 				09AE5EDD1FDDAE3700C8AC28 /* Translate Operations */,
+				09550B341FDEA446008C4495 /* TranslationManagerDelegate.h */,
 				09C54ABF1FDC1AF80073BA0F /* TranslationManager.h */,
 				09C54AC31FDC1AF90073BA0F /* TranslationManager.m */,
 			);
@@ -451,13 +457,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09550B361FDEA9A1008C4495 /* Word+CoreDataProperties.m in Sources */,
 				09C54AD01FDC1BB70073BA0F /* NetworkAPI.m in Sources */,
 				09C54AD11FDC1BB70073BA0F /* YandexTranslateOperation.m in Sources */,
 				09C54AD21FDC1BB70073BA0F /* TranslationManager.m in Sources */,
 				09AE5ECE1FDC890200C8AC28 /* AlertViewHelper.m in Sources */,
 				09C54AD31FDC1BB70073BA0F /* WordsStoreManager.m in Sources */,
 				09C54AD41FDC1BB70073BA0F /* WordsSearchManager.m in Sources */,
-				09C54AD61FDC1BB70073BA0F /* Word+CoreDataProperties.m in Sources */,
 				09C54AD71FDC1BB70073BA0F /* LoadingView.m in Sources */,
 				09C54AD91FDC1BB70073BA0F /* WordCell.m in Sources */,
 				09C54ADB1FDC1BB70073BA0F /* WordsTableViewDataSource.m in Sources */,

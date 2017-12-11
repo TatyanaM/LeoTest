@@ -1,12 +1,12 @@
 //
-//  Word+CoreDataProperties.h
+//  Word.h
 //  
 //
 //  Created by Tatiana Mudryak on 09.12.2017.
 //
 //
 
-#import "Word+CoreDataClass.h"
+#import "Word.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Word *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSString *translation;
+@property (nullable, nonatomic, copy) NSData *translations;
 @property (nullable, nonatomic, copy) NSString *word;
 
 @end

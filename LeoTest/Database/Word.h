@@ -1,5 +1,5 @@
 //
-//  Word+CoreDataClass.h
+//  Word.h
 //  
 //
 //  Created by Tatiana Mudryak on 09.12.2017.

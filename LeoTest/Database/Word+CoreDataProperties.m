@@ -14,7 +14,7 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"Word"];
 }
 
-@dynamic translation;
+@dynamic translations;
 @dynamic word;
 
 @end

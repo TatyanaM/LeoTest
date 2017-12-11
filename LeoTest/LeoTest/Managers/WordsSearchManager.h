@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WordsSearchManagerDelegate.h"
 
-@protocol WordsSearchManageDelegate <NSObject>
+@protocol WordsSearchManagerDelegate;
 
--(void)wordsFound:(NSArray *)words;
-
-@end
-
+/**
+ Менеджер для поиска слов
+ */
 @interface WordsSearchManager : NSObject
 
-@property (nonatomic, weak) id <WordsSearchManageDelegate> delegate;
+@property (nonatomic, weak) id <WordsSearchManagerDelegate> delegate;
 
 @end

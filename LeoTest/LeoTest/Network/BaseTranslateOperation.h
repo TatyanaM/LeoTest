@@ -11,6 +11,9 @@
 
 @protocol TranslateOperationDelegate;
 
+/**
+ Базовый класс для операций перевода слова
+ */
 @interface BaseTranslateOperation : NSOperation
 
 @property (nonatomic, weak) id <TranslateOperationDelegate> delegate;

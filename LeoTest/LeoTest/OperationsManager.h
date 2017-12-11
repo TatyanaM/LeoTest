@@ -14,11 +14,25 @@ typedef enum TranslationSource  {
     GoogleTranslator
 } TranslationSource;
 
+/**
+ Менеджер управления операциями перевода слова
+ */
 @interface OperationsManager : NSObject
 
+/**
+ Очередь операций
+ */
 @property (nonatomic, strong) NSOperationQueue *operationsQueue;
 
 + (instancetype)sharedManager;
+
+/**
+ Фабрика создания операций в зависимости от указанного источника перевода
+
+ @param source источник перевода
+ @param text переводимое слово
+ @return экземпляр операции нужного типа
+ */
 - (id <TranslateOperationDelegate>)operationForTranslationSource:(TranslationSource)source andText:(NSString *)text;
 
 @end

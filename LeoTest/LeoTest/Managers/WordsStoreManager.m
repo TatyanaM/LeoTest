@@ -7,7 +7,6 @@
 //
 
 #import "WordsStoreManager.h"
-#import "Word+CoreDataClass.h"
 #import <MagicalRecord/MagicalRecord.h>
 
 @interface WordsStoreManager ()
@@ -29,12 +28,12 @@
 	return self;
 }
 
-- (void)addDelegate:(id<WordsStoreManageDelegate>)delegate
+- (void)addDelegate:(id<WordsStoreManagerDelegate>)delegate
 {
 	[delegates addPointer:(__bridge void *)delegate];
 }
 
-- (void)removeDelegate:(id<WordsStoreManageDelegate>)delegate
+- (void)removeDelegate:(id<WordsStoreManagerDelegate>)delegate
 {
     // Remove the pointer from the array
     for (int i=0; i < delegates.count; i++) {
@@ -64,17 +63,18 @@
 
 #pragma mark - Actions
 
-- (BOOL)saveWord:(NSString *)text withTranslation:(NSString *)translation
+- (Word *)saveWord:(NSString *)text withTranslation:(NSArray *)translations
 {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"word = %@", text];
     Word *newWord = [Word MR_findFirstWithPredicate:predicate inContext:ManagedObjectContext];
     if (!newWord) {
         newWord = [Word MR_createEntityInContext:ManagedObjectContext];
         newWord.word = text;
-        newWord.translation = translation;
+		NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:translations];
+        newWord.translations = arrayData;
     }
     [ManagedObjectContext MR_saveToPersistentStoreAndWait];
-    return YES;
+    return newWord;
 }
 
 - (void)fetchVocabulary

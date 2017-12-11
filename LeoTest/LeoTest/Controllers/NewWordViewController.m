@@ -11,16 +11,19 @@
 #import "TranslationManager.h"
 #import "TranslationsTableViewDataSource.h"
 #import "LoadingView.h"
+#import "Word.h"
 
 static NSString *const NewWordViewControllerTitle = @"Add word";
 
-@interface NewWordViewController () <WordsStoreManageDelegate, TranslationManagerDelegate, UITextFieldDelegate>
+@interface NewWordViewController () <WordsStoreManagerDelegate, TranslationManagerDelegate, UITextFieldDelegate>
 
+@property (nonatomic, strong) NSString *translatedWord;
+@property (nonatomic, strong) NSArray *translations;
 @property (weak, nonatomic) IBOutlet UITextField *wordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (nonatomic, strong) LoadingView *loadingView;
 
-//translation view
+//translation
 @property (weak, nonatomic) IBOutlet UIView *translationView;
 @property (weak, nonatomic) IBOutlet UITableView *translationsTableView;
 
@@ -88,12 +91,19 @@ static NSString *const NewWordViewControllerTitle = @"Add word";
 - (IBAction)translateWord
 {
    // [self.loadingView start];
-    [self.translationManager translateWord:self.wordTextField.text withTranslationSource:YandexTranslator];
+	self.translatedWord = self.wordTextField.text;
+	if (self.translatedWord.length > 0) {
+    	[self.translationManager translateWord:self.translatedWord withTranslationSource:YandexTranslator]; //пока по умолчанию яндекс
+	} else {
+		[self presentViewController:[AlertViewHelper alertWithTitle:@"Ошибка" andMessage:@"Введите слово!"]
+						   animated:YES
+						 completion:nil];
+	}
 }
 
 - (IBAction)addWordToVocabulary
 {
-   if ([self.storeManager saveWord:self.wordTextField.text withTranslation:@"111"])
+   if ([self.storeManager saveWord:self.wordTextField.text withTranslation:self.translations])
        [self newWordAdded];
    else {
        [self presentViewController:[AlertViewHelper alertWithTitle:@"Ошибка" andMessage:@"Не удалось сохранить слово!"]
@@ -127,6 +137,7 @@ static NSString *const NewWordViewControllerTitle = @"Add word";
 
 - (void)translationsLoaded:(NSArray *)translations
 {
+	self.translations = translations;
     [self.loadingView stop];
     [self.wordTextField resignFirstResponder];
     self.translationsDataSource.translations = translations;

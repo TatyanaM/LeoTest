@@ -14,7 +14,7 @@
 
 static NSString *const MainViewControllerTitle = @"Словарь";
 
-@interface MainViewController () <WordsStoreManageDelegate, WordsSearchManageDelegate>
+@interface MainViewController () <WordsStoreManagerDelegate, WordsSearchManagerDelegate>
 
 //data
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

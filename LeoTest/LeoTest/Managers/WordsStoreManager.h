@@ -7,14 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WordsStoreManagerDelegate.h"
+#import "Word.h"
 
-@protocol WordsStoreManageDelegate <NSObject>
-
-@optional
--(void)newWordAddedWithResult:(BOOL)result error:(NSString *)error;
--(void)vocabularyLoaded:(NSArray *)words;
-
-@end
+@protocol WordsStoreManagerDelegate;
 
 /**
  Класс-менеджер хранения слов в базе данных
@@ -26,17 +22,24 @@
 
  @param delegate добавляемый обьект-делегат, поддерживающий протокол WordsStoreManageDelegate
  */
-- (void)addDelegate:(id<WordsStoreManageDelegate>)delegate;
+- (void)addDelegate:(id<WordsStoreManagerDelegate>)delegate;
 
 /**
  Удалить делегат
 
  @param delegate удаляемый обьект-делегат, поддерживающий протокол WordsStoreManageDelegate
  */
-- (void)removeDelegate:(id<WordsStoreManageDelegate>)delegate;
+- (void)removeDelegate:(id<WordsStoreManagerDelegate>)delegate;
 
 
--(BOOL)saveWord:(NSString *)text withTranslation:(NSString *)translation;
+/**
+ Сохраняет слово в БД
+
+ @param text слово
+ @param translations варианты переводов
+ @return добавленное слово, экземпляр Word
+ */
+-(Word *)saveWord:(NSString *)text withTranslation:(NSArray *)translations;
 
 /**
  Получить все слова из словаря
