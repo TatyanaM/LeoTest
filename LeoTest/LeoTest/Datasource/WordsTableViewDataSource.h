@@ -14,5 +14,7 @@
 @interface WordsTableViewDataSource : NSObject <UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray *words;
+@property (nonatomic, strong) NSArray *filteredWords;
+@property (nonatomic) BOOL searchEnabled;
 
 @end

@@ -10,6 +10,16 @@
 
 @implementation BaseTranslateOperation
 
+-(id)initWithText:(NSString *)text
+{
+	self = [super init];
+	if (self) {
+		_text = [text copy];
+	}
+	return self;
+}
+
+
 -(BOOL)isConcurrent
 {
 	return YES;

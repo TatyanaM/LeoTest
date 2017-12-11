@@ -10,17 +10,11 @@
 
 
 /**
- Операция для перевода слова через Yandex
+ Операция для перевода текста через Yandex
  */
 @interface YandexTranslateOperation : BaseTranslateOperation
 
-/**
- Создает операцию перевода слова
 
- @param text слово для перевода
- @return экземпляр YandexTranslateOperation
- */
--(instancetype)initWithText:(NSString *)text;
 
 
 @end

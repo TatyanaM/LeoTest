@@ -10,11 +10,10 @@
 #import "NewWordViewController.h"
 #import "WordsTableViewDataSource.h"
 #import "WordsStoreManager.h"
-#import "WordsSearchManager.h"
 
 static NSString *const MainViewControllerTitle = @"Словарь";
 
-@interface MainViewController () <WordsSearchManagerDelegate>
+@interface MainViewController () <UISearchBarDelegate>
 
 //data
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,7 +22,6 @@ static NSString *const MainViewControllerTitle = @"Словарь";
 
 //search
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (nonatomic, strong) WordsSearchManager *searchManager;
 
 @end
 
@@ -77,12 +75,42 @@ static NSString *const MainViewControllerTitle = @"Словарь";
 }
 
 
-#pragma mark - WordsSearchManageDelegate
+#pragma mark - Search delegate methods
 
--(void)wordsFound:(NSArray *)words
+- (void)filterContentForSearchText:(NSString*)searchText
 {
-    self.tableViewDataSource.words = words;
-    [self.tableView reloadData];
+	[self.storeManager foundWord:searchText withCompletionHandler:^(NSArray *vocabulary) {
+		self.tableViewDataSource.filteredWords = vocabulary;
+		[self.tableView reloadData];
+	}];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+	if (searchBar.text.length == 0) {
+		self.tableViewDataSource.searchEnabled = NO;
+		[self.tableView reloadData];
+	}
+	else {
+		self.tableViewDataSource.searchEnabled = YES;
+		[self filterContentForSearchText:searchBar.text];
+	}
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+	[searchBar resignFirstResponder];
+	self.tableViewDataSource.searchEnabled = YES;
+	[self filterContentForSearchText:searchBar.text];
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+	[searchBar resignFirstResponder];
+	[searchBar setText:@""];
+	self.tableViewDataSource.searchEnabled = NO;
+	[_tableView reloadData];
+
 }
 
 @end

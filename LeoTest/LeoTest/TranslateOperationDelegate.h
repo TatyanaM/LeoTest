@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 
 /**
- Протокол работы операции перевода слова
+ Протокол работы операции перевода текста
  */
 @protocol TranslateOperationDelegate <NSObject>
 
 @required
+
 /**
- Сообщает о том, что перевод не удался
+ Вызывается в случае, если перевод не удался
 
  @param error описание ошибки
  */
@@ -23,9 +24,9 @@
 
 
 /**
- Сообщает об успешном завершении перевода
+ Вызывается при успешном завершении перевода
 
- @param translations массив с словами - вариантами перевода
+ @param translations массив со словами - вариантами перевода
  */
 - (void)translationFinishedWithResult:(NSArray *)translations;
 

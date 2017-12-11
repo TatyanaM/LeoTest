@@ -36,4 +36,5 @@ typedef void (^CreateWordCompletionHandler)(Word *word);
  */
 -(void)fetchVocabularyWithCompletionHandler:(VocabularyCompletionHandler)completionHandler;
 
+- (void)foundWord:(NSString *)wordString withCompletionHandler:(VocabularyCompletionHandler)completionHandler;
 @end

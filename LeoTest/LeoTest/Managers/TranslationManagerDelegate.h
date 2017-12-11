@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- Протокол менеджера перевода слов
+ Протокол менеджера перевода текста
  */
 @protocol TranslationManagerDelegate <NSObject>
 @required

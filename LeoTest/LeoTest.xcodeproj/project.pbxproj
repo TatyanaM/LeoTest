@@ -20,7 +20,6 @@
 		09C54AD11FDC1BB70073BA0F /* YandexTranslateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C54AC21FDC1AF90073BA0F /* YandexTranslateOperation.m */; };
 		09C54AD21FDC1BB70073BA0F /* TranslationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C54AC31FDC1AF90073BA0F /* TranslationManager.m */; };
 		09C54AD31FDC1BB70073BA0F /* WordsStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF7351FDA9C9A00383359 /* WordsStoreManager.m */; };
-		09C54AD41FDC1BB70073BA0F /* WordsSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 095618381FDB2B0000AE2DD4 /* WordsSearchManager.m */; };
 		09C54AD71FDC1BB70073BA0F /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF71D1FDA7DFA00383359 /* LoadingView.m */; };
 		09C54AD91FDC1BB70073BA0F /* WordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF7131FDA797300383359 /* WordCell.m */; };
 		09C54ADB1FDC1BB70073BA0F /* WordsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF70B1FDA78D400383359 /* WordsTableViewDataSource.m */; };
@@ -48,10 +47,7 @@
 /* Begin PBXFileReference section */
 		091E282A1FDC3CFE00A2D227 /* TranslationsTableViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TranslationsTableViewDataSource.h; path = Datasource/TranslationsTableViewDataSource.h; sourceTree = "<group>"; };
 		091E282B1FDC3CFE00A2D227 /* TranslationsTableViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TranslationsTableViewDataSource.m; path = Datasource/TranslationsTableViewDataSource.m; sourceTree = "<group>"; };
-		09550B331FDEA420008C4495 /* WordsSearchManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordsSearchManagerDelegate.h; sourceTree = "<group>"; };
-		09550B341FDEA446008C4495 /* TranslationManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TranslationManagerDelegate.h; path = Network/TranslationManagerDelegate.h; sourceTree = "<group>"; };
-		095618371FDB2B0000AE2DD4 /* WordsSearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsSearchManager.h; sourceTree = "<group>"; };
-		095618381FDB2B0000AE2DD4 /* WordsSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsSearchManager.m; sourceTree = "<group>"; };
+		09550B341FDEA446008C4495 /* TranslationManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranslationManagerDelegate.h; sourceTree = "<group>"; };
 		09AE5ECC1FDC890200C8AC28 /* AlertViewHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertViewHelper.h; sourceTree = "<group>"; };
 		09AE5ECD1FDC890200C8AC28 /* AlertViewHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertViewHelper.m; sourceTree = "<group>"; };
 		09AE5ECF1FDD77AA00C8AC28 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -84,11 +80,11 @@
 		09BFF7341FDA9C9A00383359 /* WordsStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsStoreManager.h; sourceTree = "<group>"; };
 		09BFF7351FDA9C9A00383359 /* WordsStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsStoreManager.m; sourceTree = "<group>"; };
 		09C54ABE1FDC1AF80073BA0F /* YandexTranslateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YandexTranslateOperation.h; path = Network/YandexTranslateOperation.h; sourceTree = "<group>"; };
-		09C54ABF1FDC1AF80073BA0F /* TranslationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TranslationManager.h; path = Network/TranslationManager.h; sourceTree = "<group>"; };
+		09C54ABF1FDC1AF80073BA0F /* TranslationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslationManager.h; sourceTree = "<group>"; };
 		09C54AC01FDC1AF80073BA0F /* NetworkAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkAPI.h; path = Network/NetworkAPI.h; sourceTree = "<group>"; };
 		09C54AC11FDC1AF90073BA0F /* NetworkAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkAPI.m; path = Network/NetworkAPI.m; sourceTree = "<group>"; };
 		09C54AC21FDC1AF90073BA0F /* YandexTranslateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YandexTranslateOperation.m; path = Network/YandexTranslateOperation.m; sourceTree = "<group>"; };
-		09C54AC31FDC1AF90073BA0F /* TranslationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TranslationManager.m; path = Network/TranslationManager.m; sourceTree = "<group>"; };
+		09C54AC31FDC1AF90073BA0F /* TranslationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslationManager.m; sourceTree = "<group>"; };
 		09C54AC81FDC1B720073BA0F /* LeoTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LeoTest.xcdatamodel; sourceTree = "<group>"; };
 		09C54ACA1FDC1B9D0073BA0F /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Word.m; path = Database/Word.m; sourceTree = SOURCE_ROOT; };
 		09C54ACB1FDC1B9D0073BA0F /* Word+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Word+CoreDataProperties.h"; path = "Database/Word+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
@@ -244,11 +240,11 @@
 		09BFF7251FDA8D3300383359 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				09550B341FDEA446008C4495 /* TranslationManagerDelegate.h */,
+				09C54ABF1FDC1AF80073BA0F /* TranslationManager.h */,
+				09C54AC31FDC1AF90073BA0F /* TranslationManager.m */,
 				09BFF7341FDA9C9A00383359 /* WordsStoreManager.h */,
 				09BFF7351FDA9C9A00383359 /* WordsStoreManager.m */,
-				09550B331FDEA420008C4495 /* WordsSearchManagerDelegate.h */,
-				095618371FDB2B0000AE2DD4 /* WordsSearchManager.h */,
-				095618381FDB2B0000AE2DD4 /* WordsSearchManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -272,9 +268,6 @@
 				09C54AC01FDC1AF80073BA0F /* NetworkAPI.h */,
 				09C54AC11FDC1AF90073BA0F /* NetworkAPI.m */,
 				09AE5EDD1FDDAE3700C8AC28 /* Translate Operations */,
-				09550B341FDEA446008C4495 /* TranslationManagerDelegate.h */,
-				09C54ABF1FDC1AF80073BA0F /* TranslationManager.h */,
-				09C54AC31FDC1AF90073BA0F /* TranslationManager.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -461,7 +454,6 @@
 				09C54AD21FDC1BB70073BA0F /* TranslationManager.m in Sources */,
 				09AE5ECE1FDC890200C8AC28 /* AlertViewHelper.m in Sources */,
 				09C54AD31FDC1BB70073BA0F /* WordsStoreManager.m in Sources */,
-				09C54AD41FDC1BB70073BA0F /* WordsSearchManager.m in Sources */,
 				09C54AD71FDC1BB70073BA0F /* LoadingView.m in Sources */,
 				09C54AD91FDC1BB70073BA0F /* WordCell.m in Sources */,
 				09C54ADB1FDC1BB70073BA0F /* WordsTableViewDataSource.m in Sources */,

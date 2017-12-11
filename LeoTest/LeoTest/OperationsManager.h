@@ -15,7 +15,7 @@ typedef enum TranslationSource  {
 } TranslationSource;
 
 /**
- Менеджер управления операциями перевода слова
+ Менеджер управления операциями перевода текста
  */
 @interface OperationsManager : NSObject
 
@@ -30,7 +30,7 @@ typedef enum TranslationSource  {
  Фабрика создания операций в зависимости от указанного источника перевода
 
  @param source источник перевода
- @param text переводимое слово
+ @param text текст для перевода
  @return экземпляр операции нужного типа
  */
 - (id <TranslateOperationDelegate>)operationForTranslationSource:(TranslationSource)source andText:(NSString *)text;

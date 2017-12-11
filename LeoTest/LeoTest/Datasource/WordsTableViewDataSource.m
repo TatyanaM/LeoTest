@@ -20,7 +20,12 @@
 		newCell = [[WordCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:WordCellIdentifier];
 	}
 
-	Word *word = [self.words objectAtIndex:indexPath.row];
+	Word *word = nil;
+	if (self.searchEnabled) {
+		word = [self.filteredWords objectAtIndex:indexPath.row];
+	} else {
+		word = [self.words objectAtIndex:indexPath.row];
+	}
 	newCell.word = word.word;
 	NSArray *arrayOfTranslations = [NSKeyedUnarchiver unarchiveObjectWithData:word.translations];
 	newCell.translation = [arrayOfTranslations componentsJoinedByString:@","];
@@ -34,7 +39,11 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return self.words.count;
+	if (self.searchEnabled) {
+		return self.filteredWords.count;
+	} else {
+		return self.words.count;
+	}
 }
 
 @end

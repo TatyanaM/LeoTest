@@ -16,21 +16,21 @@ typedef void (^ResponseCompletionHandler)(id item, NSError *error);
 @interface NetworkAPI : NSObject
 
 /**
- Инициализирует экземпляр с заданным запросом
+ Создает экземпляр Network API с заданным запросом
 
  @param request URL запрос
  @return экземпляр Network API
  */
 -(instancetype)initWithRequest:(NSURLRequest *)request;
 
+
 /**
- Отправляет асинхронный запрос
+ Отправляет синхронный запрос
 
- @param completionHandler (возвращаемый обьект, ошибка)
+ @param urlString URL строка запроса
+ @param params параметры (опционально)
+ @return ответ сервера
  */
--(void)startAsyncLoadingWithCompletionHandler:(ResponseCompletionHandler)completionHandler;
-
-
-+(id)startSyncLoadingWithURL:(NSString *)urlString params:(NSDictionary *)params error:(NSString *)errorMessage;
++(id)startSyncLoadingWithURL:(NSString *)urlString params:(NSDictionary *)params;
 
 @end

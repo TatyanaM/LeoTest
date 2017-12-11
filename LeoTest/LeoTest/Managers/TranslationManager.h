@@ -15,16 +15,16 @@ typedef void (^ItemCompletionHandler)(id items, NSError *error);
 @protocol TranslationManagerDelegate;
 
 /**
- Класс-менеджер ответственный за процесс перевода слова
+ Класс-менеджер ответственный за процесс перевода текста
  */
 @interface TranslationManager : NSObject <TranslateOperationDelegate>
 
 @property (nonatomic, assign) id <TranslationManagerDelegate> delegate;
 
 /**
- Запускает процесс перевода слова с заданным источником перевода
+ Запускает процесс перевода текста с заданным источником перевода
 
- @param text переводимое слово
+ @param text текста для перевода
  @param source источник перевода (Яндекс, Гугл, ...)
  */
 -(void)translateWord:(NSString *)text withTranslationSource:(TranslationSource)source;

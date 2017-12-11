@@ -29,18 +29,7 @@
 	return self;
 }
 
--(void)startAsyncLoadingWithCompletionHandler:(ResponseCompletionHandler)completionHandler
-{
-	NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-	AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-
-	NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:self.request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-		completionHandler(responseObject, error);
-	}];
-	[dataTask resume];
-}
-
-+(id)startSyncLoadingWithURL:(NSString *)urlString params:(NSDictionary *)params error:(NSString *)errorMessage
++(id)startSyncLoadingWithURL:(NSString *)urlString params:(NSDictionary *)params
 {
 	AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 	NSError *error = nil;
@@ -48,7 +37,6 @@
 						   parameters:params
 								 task:NULL
 								error:&error];
-	errorMessage = error.description; //TO_DO
 	return result;
 }
 

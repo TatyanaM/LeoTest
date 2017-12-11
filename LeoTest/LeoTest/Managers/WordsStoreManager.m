@@ -32,16 +32,39 @@
 
 - (void)fetchVocabularyWithCompletionHandler:(VocabularyCompletionHandler)completionHandler
 {
-	NSManagedObjectContext *privateContext = [NSManagedObjectContext MR_context];
-	[privateContext performBlock:^{
-		NSArray *privateObjects = [Word MR_findAllInContext:privateContext];
-		NSArray *privateObjectIDs = [privateObjects valueForKey:@"objectID"];
+	[ManagedObjectContext performBlock:^{
+		NSArray *privateObjects = [self entitiesInContext:ManagedObjectContext withPredicate:nil];
 		dispatch_async(dispatch_get_main_queue(), ^{
-			NSPredicate *mainPredicate = [NSPredicate predicateWithFormat:@"self IN %@", privateObjectIDs];
+			NSPredicate *mainPredicate = [NSPredicate predicateWithFormat:@"self IN %@", privateObjects];
 			NSArray *finalResults = [Word MR_findAllWithPredicate:mainPredicate];
 			completionHandler(finalResults);
 		});
 	}];
+}
+
+- (void)foundWord:(NSString *)wordString withCompletionHandler:(VocabularyCompletionHandler)completionHandler
+{
+	[ManagedObjectContext performBlock:^{
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"word CONTAINS[cd] %@", wordString];
+		NSArray *privateObjects = [self entitiesInContext:ManagedObjectContext withPredicate:predicate];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			NSPredicate *mainPredicate = [NSPredicate predicateWithFormat:@"self IN %@", privateObjects];
+			NSArray *finalResults = [Word MR_findAllWithPredicate:mainPredicate];
+			completionHandler(finalResults);
+		});
+	}];
+}
+
+-(NSArray *)entitiesInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate
+{
+	NSArray *privateObjects = nil;
+	if (!predicate) {
+		privateObjects = [Word MR_findAllInContext:ManagedObjectContext];
+	} else {
+		privateObjects = [Word MR_findAllWithPredicate:predicate inContext:ManagedObjectContext];
+	}
+	NSArray *privateObjectIDs = [privateObjects valueForKey:@"objectID"];
+	return privateObjectIDs;
 }
 
 @end

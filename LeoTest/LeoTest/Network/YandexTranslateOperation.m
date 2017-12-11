@@ -17,21 +17,11 @@ static NSString * const Yandex_APIKey = @"trnsl.1.1.20171207T110424Z.9ace9422795
 @interface YandexTranslateOperation ()
 
 @property (nonatomic, strong) NSString *textLanguage;
-@property (nonatomic, strong) NSString *text;
+
 
 @end
 
 @implementation YandexTranslateOperation
-
--(id)initWithText:(NSString *)text
-{
-    self = [super init];
-    if (self) {
-        _text = [text copy];
-    }
-    return self;
-}
-
 
 -(void)main
 {
@@ -42,7 +32,7 @@ static NSString * const Yandex_APIKey = @"trnsl.1.1.20171207T110424Z.9ace9422795
 {
     NSString *error = nil;
     NSString *langDetectUrlString = [NSString stringWithFormat:@"%@?key=%@&text=%@", langDetectionURL, Yandex_APIKey, self.text];
-	NSDictionary *responseData = [NetworkAPI startSyncLoadingWithURL:langDetectUrlString params:nil error:error];
+	NSDictionary *responseData = [NetworkAPI startSyncLoadingWithURL:langDetectUrlString params:nil];
 
 	if ([self isSuccessfulResponse:responseData]) {
 		self.textLanguage = responseData[@"lang"];
@@ -60,7 +50,7 @@ static NSString * const Yandex_APIKey = @"trnsl.1.1.20171207T110424Z.9ace9422795
     NSString *translateLang = [_textLanguage isEqualToString:@"en"] ? @"en-ru" : @"ru-en"; 
     NSString *encodedText = [self.text stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     NSString *urlString = [NSString stringWithFormat:@"%@?key=%@&text=%@&lang=%@", translateURL, Yandex_APIKey, encodedText, translateLang];
-    NSDictionary *responseData = [NetworkAPI startSyncLoadingWithURL:urlString params:nil error:error];
+    NSDictionary *responseData = [NetworkAPI startSyncLoadingWithURL:urlString params:nil];
 
 	if ([self isSuccessfulResponse:responseData]) {
 		NSArray *translations = responseData[@"text"];
