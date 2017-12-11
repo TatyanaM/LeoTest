@@ -15,7 +15,7 @@
 
 static NSString *const NewWordViewControllerTitle = @"Add word";
 
-@interface NewWordViewController () <WordsStoreManagerDelegate, TranslationManagerDelegate, UITextFieldDelegate>
+@interface NewWordViewController () <TranslationManagerDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) NSString *translatedWord;
 @property (nonatomic, strong) NSArray *translations;
@@ -50,7 +50,6 @@ static NSString *const NewWordViewControllerTitle = @"Add word";
     self.translationsTableView.dataSource = self.translationsDataSource;
     
     self.storeManager = [[WordsStoreManager alloc] init];
-	[self.storeManager addDelegate:self];
     self.translationManager = [[TranslationManager alloc] init];
     self.translationManager.delegate = self;
 }
@@ -103,13 +102,15 @@ static NSString *const NewWordViewControllerTitle = @"Add word";
 
 - (IBAction)addWordToVocabulary
 {
-   if ([self.storeManager saveWord:self.wordTextField.text withTranslation:self.translations])
-       [self newWordAdded];
-   else {
-       [self presentViewController:[AlertViewHelper alertWithTitle:@"Ошибка" andMessage:@"Не удалось сохранить слово!"]
-                          animated:YES
-                        completion:nil];
-   }
+	[self.storeManager saveWord:self.translatedWord  withTranslation:self.translations andCompletionHandler:^(Word *word) {
+		if (word) {
+			[self newWordAdded];
+		} else {
+			[self presentViewController:[AlertViewHelper alertWithTitle:@"Ошибка" andMessage:@"Не удалось сохранить слово!"]
+							   animated:YES
+							 completion:nil];
+		}
+	}];
 }
 
 - (void)newWordAdded

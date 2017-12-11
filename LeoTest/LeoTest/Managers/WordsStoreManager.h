@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WordsStoreManagerDelegate.h"
 #import "Word.h"
+
+typedef void (^VocabularyCompletionHandler)(NSArray *vocabulary);
+typedef void (^CreateWordCompletionHandler)(Word *word);
 
 @protocol WordsStoreManagerDelegate;
 
@@ -18,32 +20,20 @@
 @interface WordsStoreManager : NSObject
 
 /**
- Добавить делегат
-
- @param delegate добавляемый обьект-делегат, поддерживающий протокол WordsStoreManageDelegate
- */
-- (void)addDelegate:(id<WordsStoreManagerDelegate>)delegate;
-
-/**
- Удалить делегат
-
- @param delegate удаляемый обьект-делегат, поддерживающий протокол WordsStoreManageDelegate
- */
-- (void)removeDelegate:(id<WordsStoreManagerDelegate>)delegate;
-
-
-/**
- Сохраняет слово в БД
+ Сохраняет слово в базу данных
 
  @param text слово
- @param translations варианты переводов
- @return добавленное слово, экземпляр Word
+ @param translations варианты перевода
+ @param completionHandler сохраненное слово
  */
--(Word *)saveWord:(NSString *)text withTranslation:(NSArray *)translations;
+-(void)saveWord:(NSString *)text withTranslation:(NSArray *)translations andCompletionHandler:(CreateWordCompletionHandler)completionHandler;
+
 
 /**
- Получить все слова из словаря
+ Возвращает все слова из словаря
+
+ @param completionHandler массив слов
  */
--(void)fetchVocabulary;
+-(void)fetchVocabularyWithCompletionHandler:(VocabularyCompletionHandler)completionHandler;
 
 @end

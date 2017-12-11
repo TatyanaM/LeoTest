@@ -9,78 +9,39 @@
 #import "WordsStoreManager.h"
 #import <MagicalRecord/MagicalRecord.h>
 
-@interface WordsStoreManager ()
-
-@property (nonatomic, strong, readwrite) NSPointerArray *delegates;
-
-@end
-
 @implementation WordsStoreManager
 
-@synthesize delegates;
-
-- (instancetype)init
+- (void)saveWord:(NSString *)text withTranslation:(NSArray *)translations andCompletionHandler:(CreateWordCompletionHandler)completionHandler;
 {
-	self = [super init];
-	if (self) {
-        delegates = [NSPointerArray pointerArrayWithOptions:NSPointerFunctionsWeakMemory];
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"word = %@", text];
+	Word *newWord = [Word MR_findFirstWithPredicate:predicate inContext:ManagedObjectContext];
+	if (!newWord) {
+		[ManagedObjectContext MR_saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+			Word *localWord = [Word MR_createEntityInContext:localContext];
+			localWord.word = text;
+			NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:translations];
+			localWord.translations = arrayData;
+		} completion:^(BOOL contextDidSave, NSError * _Nullable error) {
+			Word *newWord = [Word MR_findFirstWithPredicate:predicate inContext:ManagedObjectContext];
+			completionHandler(newWord);
+		}];
+	} else {
+		completionHandler(newWord);
 	}
-	return self;
 }
 
-- (void)addDelegate:(id<WordsStoreManagerDelegate>)delegate
+- (void)fetchVocabularyWithCompletionHandler:(VocabularyCompletionHandler)completionHandler
 {
-	[delegates addPointer:(__bridge void *)delegate];
-}
-
-- (void)removeDelegate:(id<WordsStoreManagerDelegate>)delegate
-{
-    // Remove the pointer from the array
-    for (int i=0; i < delegates.count; i++) {
-        if (delegate == [delegates pointerAtIndex: i]) {
-            [delegates removePointerAtIndex: i];
-            break;
-        }
-    }
-}
-
-- (void)callDelegateMethod:(SEL)selector withObject:(id)object
-{
-    for (id delegate in delegates)
-    {
-        if ([delegate respondsToSelector:@selector(selector)]) {
-            NSMethodSignature * mySignature = [delegate methodSignatureForSelector:selector];
-            NSInvocation * myInvocation = [NSInvocation
-                                           invocationWithMethodSignature:mySignature];
-            myInvocation.target = delegate;
-            myInvocation.selector = selector;
-            [myInvocation invoke];
-        }
-            //[delegate performSelector:selector withObject:object];
-    }
-}
-
-
-#pragma mark - Actions
-
-- (Word *)saveWord:(NSString *)text withTranslation:(NSArray *)translations
-{
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"word = %@", text];
-    Word *newWord = [Word MR_findFirstWithPredicate:predicate inContext:ManagedObjectContext];
-    if (!newWord) {
-        newWord = [Word MR_createEntityInContext:ManagedObjectContext];
-        newWord.word = text;
-		NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:translations];
-        newWord.translations = arrayData;
-    }
-    [ManagedObjectContext MR_saveToPersistentStoreAndWait];
-    return newWord;
-}
-
-- (void)fetchVocabulary
-{
-	NSArray *words = [Word MR_findAllInContext:ManagedObjectContext];
-    [self callDelegateMethod:@selector(vocabularyLoaded:) withObject:words];
+	NSManagedObjectContext *privateContext = [NSManagedObjectContext MR_context];
+	[privateContext performBlock:^{
+		NSArray *privateObjects = [Word MR_findAllInContext:privateContext];
+		NSArray *privateObjectIDs = [privateObjects valueForKey:@"objectID"];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			NSPredicate *mainPredicate = [NSPredicate predicateWithFormat:@"self IN %@", privateObjectIDs];
+			NSArray *finalResults = [Word MR_findAllWithPredicate:mainPredicate];
+			completionHandler(finalResults);
+		});
+	}];
 }
 
 @end

@@ -14,7 +14,7 @@
 
 static NSString *const MainViewControllerTitle = @"Словарь";
 
-@interface MainViewController () <WordsStoreManagerDelegate, WordsSearchManagerDelegate>
+@interface MainViewController () <WordsSearchManagerDelegate>
 
 //data
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -41,7 +41,6 @@ static NSString *const MainViewControllerTitle = @"Словарь";
 	self.navigationItem.rightBarButtonItem = addItem;
 
     self.storeManager = [WordsStoreManager new];
-    [self.storeManager addDelegate:self];
     
     self.tableViewDataSource = [WordsTableViewDataSource new];
     self.tableView.dataSource = self.tableViewDataSource;
@@ -65,7 +64,10 @@ static NSString *const MainViewControllerTitle = @"Словарь";
 
 - (void)fetchVocabulary
 {
-	[self.storeManager fetchVocabulary];
+	[self.storeManager fetchVocabularyWithCompletionHandler:^(NSArray *vocabulary) {
+		self.tableViewDataSource.words = vocabulary;
+		[self.tableView reloadData];
+	}];
 }
 
 - (void)addNewWord
@@ -74,13 +76,6 @@ static NSString *const MainViewControllerTitle = @"Словарь";
 	[self.navigationController pushViewController:newWordController animated:YES];
 }
 
-#pragma mark - WordsStoreManageDelegate
-
--(void)vocabularyLoaded:(NSArray *)words
-{
-	self.tableViewDataSource.words = words;
-	[self.tableView reloadData];
-}
 
 #pragma mark - WordsSearchManageDelegate
 
