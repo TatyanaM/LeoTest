@@ -10,6 +10,9 @@
 
 extern NSString *const WordCellIdentifier;
 
+/**
+ Ячейка отображения слова из словаря
+ */
 @interface WordCell : UITableViewCell
 
 @property (nonatomic, strong) NSString *word;

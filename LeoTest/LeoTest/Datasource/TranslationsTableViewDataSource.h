@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ Источник данных для таблицы вариантов переводов слова
+ */
 @interface TranslationsTableViewDataSource : NSObject <UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray *translations;

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ Источник данных для таблицы отображения словаря
+ */
 @interface WordsTableViewDataSource : NSObject <UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray *words;

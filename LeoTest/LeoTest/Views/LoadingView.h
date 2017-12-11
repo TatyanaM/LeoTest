@@ -8,10 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ Вьха с индикатором загрузки
+ */
 @interface LoadingView : UIView
 
+/**
+ Инициализирует экземпляр LoadingView для указанного представления
+
+ @param view представление, где будет отображаться LoadingView
+ @return экземпляр LoadingView
+ */
 -(instancetype)initWithView:(UIView *)view;
+
+/**
+ Показать индикатор загрузки
+ */
 -(void)start;
+
+/**
+ Скрыть индикатор загрузки
+ */
 -(void)stop;
 
 @end

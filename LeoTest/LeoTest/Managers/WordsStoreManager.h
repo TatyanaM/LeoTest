@@ -16,12 +16,31 @@
 
 @end
 
+/**
+ Класс-менеджер хранения слов в базе данных
+ */
 @interface WordsStoreManager : NSObject
 
+/**
+ Добавить делегат
+
+ @param delegate добавляемый обьект-делегат, поддерживающий протокол WordsStoreManageDelegate
+ */
 - (void)addDelegate:(id<WordsStoreManageDelegate>)delegate;
+
+/**
+ Удалить делегат
+
+ @param delegate удаляемый обьект-делегат, поддерживающий протокол WordsStoreManageDelegate
+ */
 - (void)removeDelegate:(id<WordsStoreManageDelegate>)delegate;
 
+
 -(BOOL)saveWord:(NSString *)text withTranslation:(NSString *)translation;
+
+/**
+ Получить все слова из словаря
+ */
 -(void)fetchVocabulary;
 
 @end

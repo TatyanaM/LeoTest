@@ -144,6 +144,15 @@
 			name = Datasource;
 			sourceTree = "<group>";
 		};
+		0993020C1FDE7780005C4A9D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				09AE5ECC1FDC890200C8AC28 /* AlertViewHelper.h */,
+				09AE5ECD1FDC890200C8AC28 /* AlertViewHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		09AE5EDD1FDDAE3700C8AC28 /* Translate Operations */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +196,7 @@
 				09BFF7121FDA795000383359 /* View */,
 				095618361FDB29E700AE2DD4 /* Datasource */,
 				095618351FDB29C100AE2DD4 /* Controllers */,
+				0993020C1FDE7780005C4A9D /* Helpers */,
 				09BFF70E1FDA78DA00383359 /* Application */,
 			);
 			path = LeoTest;
@@ -213,8 +223,6 @@
 				09BFF6F21FDA76F000383359 /* Info.plist */,
 				09BFF6F31FDA76F000383359 /* main.m */,
 				09BFF7161FDA7B3400383359 /* PrefixHeader.h */,
-				09AE5ECC1FDC890200C8AC28 /* AlertViewHelper.h */,
-				09AE5ECD1FDC890200C8AC28 /* AlertViewHelper.m */,
 			);
 			name = Application;
 			sourceTree = "<group>";
