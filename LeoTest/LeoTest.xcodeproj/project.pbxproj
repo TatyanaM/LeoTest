@@ -1,0 +1,716 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		091E282C1FDC3CFE00A2D227 /* TranslationsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 091E282B1FDC3CFE00A2D227 /* TranslationsTableViewDataSource.m */; };
+		09AE5ECE1FDC890200C8AC28 /* AlertViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AE5ECD1FDC890200C8AC28 /* AlertViewHelper.m */; };
+		09AE5ED01FDD77AA00C8AC28 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AE5ECF1FDD77AA00C8AC28 /* MainViewController.xib */; };
+		09AE5ED21FDD7B7800C8AC28 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AE5ED11FDD7B7800C8AC28 /* LoadingView.xib */; };
+		09BFF6E91FDA76F000383359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09BFF6E71FDA76F000383359 /* Main.storyboard */; };
+		09BFF6EE1FDA76F000383359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09BFF6ED1FDA76F000383359 /* Assets.xcassets */; };
+		09BFF6F11FDA76F000383359 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09BFF6EF1FDA76F000383359 /* LaunchScreen.storyboard */; };
+		09BFF7241FDA827700383359 /* NewWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BFF7231FDA827700383359 /* NewWordViewController.xib */; };
+		09C54AD01FDC1BB70073BA0F /* NetworkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C54AC11FDC1AF90073BA0F /* NetworkAPI.m */; };
+		09C54AD11FDC1BB70073BA0F /* YandexTranslateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C54AC21FDC1AF90073BA0F /* YandexTranslateOperation.m */; };
+		09C54AD21FDC1BB70073BA0F /* TranslationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C54AC31FDC1AF90073BA0F /* TranslationManager.m */; };
+		09C54AD31FDC1BB70073BA0F /* WordsStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF7351FDA9C9A00383359 /* WordsStoreManager.m */; };
+		09C54AD41FDC1BB70073BA0F /* WordsSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 095618381FDB2B0000AE2DD4 /* WordsSearchManager.m */; };
+		09C54AD61FDC1BB70073BA0F /* Word+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C54ACD1FDC1B9D0073BA0F /* Word+CoreDataProperties.m */; };
+		09C54AD71FDC1BB70073BA0F /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF71D1FDA7DFA00383359 /* LoadingView.m */; };
+		09C54AD91FDC1BB70073BA0F /* WordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF7131FDA797300383359 /* WordCell.m */; };
+		09C54ADB1FDC1BB70073BA0F /* WordsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF70B1FDA78D400383359 /* WordsTableViewDataSource.m */; };
+		09C54ADC1FDC1BB70073BA0F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF7091FDA771600383359 /* MainViewController.m */; };
+		09C54ADD1FDC1BB70073BA0F /* NewWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF7321FDA935700383359 /* NewWordViewController.m */; };
+		09C54ADE1FDC1BB70073BA0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF6E21FDA76F000383359 /* AppDelegate.m */; };
+		09C54ADF1FDC1BB70073BA0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF6F31FDA76F000383359 /* main.m */; };
+		09C54AE31FDC1C240073BA0F /* OperationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C54AE21FDC1C240073BA0F /* OperationsManager.m */; };
+		09C54AE41FDC1C960073BA0F /* LeoTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFF6FD1FDA76F000383359 /* LeoTestTests.m */; };
+		09C54AE51FDC1D0B0073BA0F /* LeoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09C54AC71FDC1B720073BA0F /* LeoTest.xcdatamodeld */; };
+		09F6BB4C1FDE627E00E7D544 /* BaseTranslateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F6BB4B1FDE627E00E7D544 /* BaseTranslateOperation.m */; };
+		B51C08240FE7ECA3D5EEAC84 /* libPods-LeoTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7979ED7C668F7EA02707EF6F /* libPods-LeoTest.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		09BFF6FA1FDA76F000383359 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09BFF6D61FDA76F000383359 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09BFF6DD1FDA76F000383359;
+			remoteInfo = LeoTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		091E282A1FDC3CFE00A2D227 /* TranslationsTableViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TranslationsTableViewDataSource.h; path = Datasource/TranslationsTableViewDataSource.h; sourceTree = "<group>"; };
+		091E282B1FDC3CFE00A2D227 /* TranslationsTableViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TranslationsTableViewDataSource.m; path = Datasource/TranslationsTableViewDataSource.m; sourceTree = "<group>"; };
+		095618371FDB2B0000AE2DD4 /* WordsSearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsSearchManager.h; sourceTree = "<group>"; };
+		095618381FDB2B0000AE2DD4 /* WordsSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsSearchManager.m; sourceTree = "<group>"; };
+		09AE5ECC1FDC890200C8AC28 /* AlertViewHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertViewHelper.h; sourceTree = "<group>"; };
+		09AE5ECD1FDC890200C8AC28 /* AlertViewHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertViewHelper.m; sourceTree = "<group>"; };
+		09AE5ECF1FDD77AA00C8AC28 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		09AE5ED11FDD7B7800C8AC28 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoadingView.xib; path = Views/LoadingView.xib; sourceTree = "<group>"; };
+		09AE5ED91FDD852E00C8AC28 /* TranslateOperationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranslateOperationDelegate.h; sourceTree = "<group>"; };
+		09BFF6DE1FDA76F000383359 /* LeoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		09BFF6E11FDA76F000383359 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		09BFF6E21FDA76F000383359 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		09BFF6E81FDA76F000383359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		09BFF6ED1FDA76F000383359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		09BFF6F01FDA76F000383359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		09BFF6F21FDA76F000383359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09BFF6F31FDA76F000383359 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		09BFF6F91FDA76F000383359 /* LeoTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeoTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		09BFF6FD1FDA76F000383359 /* LeoTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeoTestTests.m; sourceTree = "<group>"; };
+		09BFF6FF1FDA76F000383359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09BFF7081FDA771600383359 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controllers/MainViewController.h; sourceTree = "<group>"; };
+		09BFF7091FDA771600383359 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
+		09BFF70B1FDA78D400383359 /* WordsTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordsTableViewDataSource.m; path = Datasource/WordsTableViewDataSource.m; sourceTree = "<group>"; };
+		09BFF70C1FDA78D400383359 /* WordsTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordsTableViewDataSource.h; path = Datasource/WordsTableViewDataSource.h; sourceTree = "<group>"; };
+		09BFF7131FDA797300383359 /* WordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordCell.m; path = Views/WordCell.m; sourceTree = "<group>"; };
+		09BFF7141FDA797300383359 /* WordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordCell.h; path = Views/WordCell.h; sourceTree = "<group>"; };
+		09BFF7161FDA7B3400383359 /* PrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
+		09BFF71C1FDA7C7A00383359 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		09BFF71D1FDA7DFA00383359 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingView.m; path = Views/LoadingView.m; sourceTree = "<group>"; };
+		09BFF71E1FDA7DFA00383359 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingView.h; path = Views/LoadingView.h; sourceTree = "<group>"; };
+		09BFF7231FDA827700383359 /* NewWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewWordViewController.xib; path = Views/NewWordViewController.xib; sourceTree = "<group>"; };
+		09BFF7311FDA935700383359 /* NewWordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NewWordViewController.h; path = Controllers/NewWordViewController.h; sourceTree = "<group>"; };
+		09BFF7321FDA935700383359 /* NewWordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NewWordViewController.m; path = Controllers/NewWordViewController.m; sourceTree = "<group>"; };
+		09BFF7341FDA9C9A00383359 /* WordsStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsStoreManager.h; sourceTree = "<group>"; };
+		09BFF7351FDA9C9A00383359 /* WordsStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsStoreManager.m; sourceTree = "<group>"; };
+		09C54ABE1FDC1AF80073BA0F /* YandexTranslateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YandexTranslateOperation.h; path = Network/YandexTranslateOperation.h; sourceTree = "<group>"; };
+		09C54ABF1FDC1AF80073BA0F /* TranslationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TranslationManager.h; path = Network/TranslationManager.h; sourceTree = "<group>"; };
+		09C54AC01FDC1AF80073BA0F /* NetworkAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkAPI.h; path = Network/NetworkAPI.h; sourceTree = "<group>"; };
+		09C54AC11FDC1AF90073BA0F /* NetworkAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkAPI.m; path = Network/NetworkAPI.m; sourceTree = "<group>"; };
+		09C54AC21FDC1AF90073BA0F /* YandexTranslateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YandexTranslateOperation.m; path = Network/YandexTranslateOperation.m; sourceTree = "<group>"; };
+		09C54AC31FDC1AF90073BA0F /* TranslationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TranslationManager.m; path = Network/TranslationManager.m; sourceTree = "<group>"; };
+		09C54AC81FDC1B720073BA0F /* LeoTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LeoTest.xcdatamodel; sourceTree = "<group>"; };
+		09C54ACA1FDC1B9D0073BA0F /* Word+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Word+CoreDataClass.m"; path = "Database/Word+CoreDataClass.m"; sourceTree = SOURCE_ROOT; };
+		09C54ACB1FDC1B9D0073BA0F /* Word+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Word+CoreDataProperties.h"; path = "Database/Word+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
+		09C54ACC1FDC1B9D0073BA0F /* Word+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Word+CoreDataClass.h"; path = "Database/Word+CoreDataClass.h"; sourceTree = SOURCE_ROOT; };
+		09C54ACD1FDC1B9D0073BA0F /* Word+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Word+CoreDataProperties.m"; path = "Database/Word+CoreDataProperties.m"; sourceTree = SOURCE_ROOT; };
+		09C54AE11FDC1C230073BA0F /* OperationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationsManager.h; sourceTree = "<group>"; };
+		09C54AE21FDC1C240073BA0F /* OperationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationsManager.m; sourceTree = "<group>"; };
+		09F6BB4A1FDE627E00E7D544 /* BaseTranslateOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BaseTranslateOperation.h; path = Network/BaseTranslateOperation.h; sourceTree = "<group>"; };
+		09F6BB4B1FDE627E00E7D544 /* BaseTranslateOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BaseTranslateOperation.m; path = Network/BaseTranslateOperation.m; sourceTree = "<group>"; };
+		46A1009784300021DCA66CC7 /* Pods-LeoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeoTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeoTest/Pods-LeoTest.release.xcconfig"; sourceTree = "<group>"; };
+		7979ED7C668F7EA02707EF6F /* libPods-LeoTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LeoTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C56FB0833F15FF89E809A9F6 /* Pods-LeoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeoTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeoTest/Pods-LeoTest.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		09BFF6DB1FDA76F000383359 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B51C08240FE7ECA3D5EEAC84 /* libPods-LeoTest.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09BFF6F61FDA76F000383359 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		095618351FDB29C100AE2DD4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				09BFF7081FDA771600383359 /* MainViewController.h */,
+				09BFF7091FDA771600383359 /* MainViewController.m */,
+				09AE5ECF1FDD77AA00C8AC28 /* MainViewController.xib */,
+				09BFF7311FDA935700383359 /* NewWordViewController.h */,
+				09BFF7321FDA935700383359 /* NewWordViewController.m */,
+				09BFF7231FDA827700383359 /* NewWordViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		095618361FDB29E700AE2DD4 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				09BFF70C1FDA78D400383359 /* WordsTableViewDataSource.h */,
+				09BFF70B1FDA78D400383359 /* WordsTableViewDataSource.m */,
+				091E282A1FDC3CFE00A2D227 /* TranslationsTableViewDataSource.h */,
+				091E282B1FDC3CFE00A2D227 /* TranslationsTableViewDataSource.m */,
+			);
+			name = Datasource;
+			sourceTree = "<group>";
+		};
+		09AE5EDD1FDDAE3700C8AC28 /* Translate Operations */ = {
+			isa = PBXGroup;
+			children = (
+				09AE5ED91FDD852E00C8AC28 /* TranslateOperationDelegate.h */,
+				09C54AE11FDC1C230073BA0F /* OperationsManager.h */,
+				09C54AE21FDC1C240073BA0F /* OperationsManager.m */,
+				09F6BB4A1FDE627E00E7D544 /* BaseTranslateOperation.h */,
+				09F6BB4B1FDE627E00E7D544 /* BaseTranslateOperation.m */,
+				09C54ABE1FDC1AF80073BA0F /* YandexTranslateOperation.h */,
+				09C54AC21FDC1AF90073BA0F /* YandexTranslateOperation.m */,
+			);
+			name = "Translate Operations";
+			sourceTree = "<group>";
+		};
+		09BFF6D51FDA76F000383359 = {
+			isa = PBXGroup;
+			children = (
+				09BFF6E01FDA76F000383359 /* LeoTest */,
+				09BFF6FC1FDA76F000383359 /* LeoTestTests */,
+				09BFF6DF1FDA76F000383359 /* Products */,
+				6082B93F8CA1C2F05795FBD5 /* Pods */,
+				D75DEB1BA7D7F9393E58C087 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		09BFF6DF1FDA76F000383359 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09BFF6DE1FDA76F000383359 /* LeoTest.app */,
+				09BFF6F91FDA76F000383359 /* LeoTestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		09BFF6E01FDA76F000383359 /* LeoTest */ = {
+			isa = PBXGroup;
+			children = (
+				09C54AA51FDC18DC0073BA0F /* Network */,
+				09BFF7251FDA8D3300383359 /* Managers */,
+				09BFF7371FDAA11E00383359 /* Model */,
+				09BFF7121FDA795000383359 /* View */,
+				095618361FDB29E700AE2DD4 /* Datasource */,
+				095618351FDB29C100AE2DD4 /* Controllers */,
+				09BFF70E1FDA78DA00383359 /* Application */,
+			);
+			path = LeoTest;
+			sourceTree = "<group>";
+		};
+		09BFF6FC1FDA76F000383359 /* LeoTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				09BFF6FD1FDA76F000383359 /* LeoTestTests.m */,
+				09BFF6FF1FDA76F000383359 /* Info.plist */,
+			);
+			path = LeoTestTests;
+			sourceTree = "<group>";
+		};
+		09BFF70E1FDA78DA00383359 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				09BFF71C1FDA7C7A00383359 /* Constants.h */,
+				09BFF6E11FDA76F000383359 /* AppDelegate.h */,
+				09BFF6E21FDA76F000383359 /* AppDelegate.m */,
+				09BFF6E71FDA76F000383359 /* Main.storyboard */,
+				09BFF6ED1FDA76F000383359 /* Assets.xcassets */,
+				09BFF6EF1FDA76F000383359 /* LaunchScreen.storyboard */,
+				09BFF6F21FDA76F000383359 /* Info.plist */,
+				09BFF6F31FDA76F000383359 /* main.m */,
+				09BFF7161FDA7B3400383359 /* PrefixHeader.h */,
+				09AE5ECC1FDC890200C8AC28 /* AlertViewHelper.h */,
+				09AE5ECD1FDC890200C8AC28 /* AlertViewHelper.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		09BFF7121FDA795000383359 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09BFF71E1FDA7DFA00383359 /* LoadingView.h */,
+				09BFF71D1FDA7DFA00383359 /* LoadingView.m */,
+				09AE5ED11FDD7B7800C8AC28 /* LoadingView.xib */,
+				09BFF7141FDA797300383359 /* WordCell.h */,
+				09BFF7131FDA797300383359 /* WordCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		09BFF7251FDA8D3300383359 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				09BFF7341FDA9C9A00383359 /* WordsStoreManager.h */,
+				09BFF7351FDA9C9A00383359 /* WordsStoreManager.m */,
+				095618371FDB2B0000AE2DD4 /* WordsSearchManager.h */,
+				095618381FDB2B0000AE2DD4 /* WordsSearchManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		09BFF7371FDAA11E00383359 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09C54ACC1FDC1B9D0073BA0F /* Word+CoreDataClass.h */,
+				09C54ACA1FDC1B9D0073BA0F /* Word+CoreDataClass.m */,
+				09C54ACB1FDC1B9D0073BA0F /* Word+CoreDataProperties.h */,
+				09C54ACD1FDC1B9D0073BA0F /* Word+CoreDataProperties.m */,
+				09C54AC71FDC1B720073BA0F /* LeoTest.xcdatamodeld */,
+			);
+			name = Model;
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		09C54AA51FDC18DC0073BA0F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				09C54AC01FDC1AF80073BA0F /* NetworkAPI.h */,
+				09C54AC11FDC1AF90073BA0F /* NetworkAPI.m */,
+				09AE5EDD1FDDAE3700C8AC28 /* Translate Operations */,
+				09C54ABF1FDC1AF80073BA0F /* TranslationManager.h */,
+				09C54AC31FDC1AF90073BA0F /* TranslationManager.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		6082B93F8CA1C2F05795FBD5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C56FB0833F15FF89E809A9F6 /* Pods-LeoTest.debug.xcconfig */,
+				46A1009784300021DCA66CC7 /* Pods-LeoTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D75DEB1BA7D7F9393E58C087 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7979ED7C668F7EA02707EF6F /* libPods-LeoTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		09BFF6DD1FDA76F000383359 /* LeoTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09BFF7021FDA76F000383359 /* Build configuration list for PBXNativeTarget "LeoTest" */;
+			buildPhases = (
+				BA7542FBB6795FAEE66F7CF5 /* [CP] Check Pods Manifest.lock */,
+				09BFF6DA1FDA76F000383359 /* Sources */,
+				09BFF6DB1FDA76F000383359 /* Frameworks */,
+				09BFF6DC1FDA76F000383359 /* Resources */,
+				EB782467E77607D0B9B088A9 /* [CP] Embed Pods Frameworks */,
+				15FABDFE0617DC491A9CD68C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LeoTest;
+			productName = LeoTest;
+			productReference = 09BFF6DE1FDA76F000383359 /* LeoTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		09BFF6F81FDA76F000383359 /* LeoTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09BFF7051FDA76F000383359 /* Build configuration list for PBXNativeTarget "LeoTestTests" */;
+			buildPhases = (
+				09BFF6F51FDA76F000383359 /* Sources */,
+				09BFF6F61FDA76F000383359 /* Frameworks */,
+				09BFF6F71FDA76F000383359 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				09BFF6FB1FDA76F000383359 /* PBXTargetDependency */,
+			);
+			name = LeoTestTests;
+			productName = LeoTestTests;
+			productReference = 09BFF6F91FDA76F000383359 /* LeoTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		09BFF6D61FDA76F000383359 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Tatiana Mudryak";
+				TargetAttributes = {
+					09BFF6DD1FDA76F000383359 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					09BFF6F81FDA76F000383359 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 09BFF6DD1FDA76F000383359;
+					};
+				};
+			};
+			buildConfigurationList = 09BFF6D91FDA76F000383359 /* Build configuration list for PBXProject "LeoTest" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 09BFF6D51FDA76F000383359;
+			productRefGroup = 09BFF6DF1FDA76F000383359 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				09BFF6DD1FDA76F000383359 /* LeoTest */,
+				09BFF6F81FDA76F000383359 /* LeoTestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		09BFF6DC1FDA76F000383359 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09BFF7241FDA827700383359 /* NewWordViewController.xib in Resources */,
+				09BFF6F11FDA76F000383359 /* LaunchScreen.storyboard in Resources */,
+				09AE5ED01FDD77AA00C8AC28 /* MainViewController.xib in Resources */,
+				09AE5ED21FDD7B7800C8AC28 /* LoadingView.xib in Resources */,
+				09BFF6EE1FDA76F000383359 /* Assets.xcassets in Resources */,
+				09BFF6E91FDA76F000383359 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09BFF6F71FDA76F000383359 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15FABDFE0617DC491A9CD68C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeoTest/Pods-LeoTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA7542FBB6795FAEE66F7CF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LeoTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB782467E77607D0B9B088A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeoTest/Pods-LeoTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		09BFF6DA1FDA76F000383359 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09C54AD01FDC1BB70073BA0F /* NetworkAPI.m in Sources */,
+				09C54AD11FDC1BB70073BA0F /* YandexTranslateOperation.m in Sources */,
+				09C54AD21FDC1BB70073BA0F /* TranslationManager.m in Sources */,
+				09AE5ECE1FDC890200C8AC28 /* AlertViewHelper.m in Sources */,
+				09C54AD31FDC1BB70073BA0F /* WordsStoreManager.m in Sources */,
+				09C54AD41FDC1BB70073BA0F /* WordsSearchManager.m in Sources */,
+				09C54AD61FDC1BB70073BA0F /* Word+CoreDataProperties.m in Sources */,
+				09C54AD71FDC1BB70073BA0F /* LoadingView.m in Sources */,
+				09C54AD91FDC1BB70073BA0F /* WordCell.m in Sources */,
+				09C54ADB1FDC1BB70073BA0F /* WordsTableViewDataSource.m in Sources */,
+				091E282C1FDC3CFE00A2D227 /* TranslationsTableViewDataSource.m in Sources */,
+				09C54ADC1FDC1BB70073BA0F /* MainViewController.m in Sources */,
+				09C54ADD1FDC1BB70073BA0F /* NewWordViewController.m in Sources */,
+				09F6BB4C1FDE627E00E7D544 /* BaseTranslateOperation.m in Sources */,
+				09C54ADE1FDC1BB70073BA0F /* AppDelegate.m in Sources */,
+				09C54AE31FDC1C240073BA0F /* OperationsManager.m in Sources */,
+				09C54AE51FDC1D0B0073BA0F /* LeoTest.xcdatamodeld in Sources */,
+				09C54ADF1FDC1BB70073BA0F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09BFF6F51FDA76F000383359 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09C54AE41FDC1C960073BA0F /* LeoTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		09BFF6FB1FDA76F000383359 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09BFF6DD1FDA76F000383359 /* LeoTest */;
+			targetProxy = 09BFF6FA1FDA76F000383359 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		09BFF6E71FDA76F000383359 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09BFF6E81FDA76F000383359 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		09BFF6EF1FDA76F000383359 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09BFF6F01FDA76F000383359 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		09BFF7001FDA76F000383359 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		09BFF7011FDA76F000383359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		09BFF7031FDA76F000383359 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C56FB0833F15FF89E809A9F6 /* Pods-LeoTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = LeoTest/PrefixHeader.h;
+				INFOPLIST_FILE = LeoTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tm.LeoTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		09BFF7041FDA76F000383359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46A1009784300021DCA66CC7 /* Pods-LeoTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = LeoTest/PrefixHeader.h;
+				INFOPLIST_FILE = LeoTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tm.LeoTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		09BFF7061FDA76F000383359 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeoTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tm.LeoTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeoTest.app/LeoTest";
+			};
+			name = Debug;
+		};
+		09BFF7071FDA76F000383359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeoTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tm.LeoTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeoTest.app/LeoTest";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		09BFF6D91FDA76F000383359 /* Build configuration list for PBXProject "LeoTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09BFF7001FDA76F000383359 /* Debug */,
+				09BFF7011FDA76F000383359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09BFF7021FDA76F000383359 /* Build configuration list for PBXNativeTarget "LeoTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09BFF7031FDA76F000383359 /* Debug */,
+				09BFF7041FDA76F000383359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09BFF7051FDA76F000383359 /* Build configuration list for PBXNativeTarget "LeoTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09BFF7061FDA76F000383359 /* Debug */,
+				09BFF7071FDA76F000383359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		09C54AC71FDC1B720073BA0F /* LeoTest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				09C54AC81FDC1B720073BA0F /* LeoTest.xcdatamodel */,
+			);
+			currentVersion = 09C54AC81FDC1B720073BA0F /* LeoTest.xcdatamodel */;
+			name = LeoTest.xcdatamodeld;
+			path = ../LeoTest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 09BFF6D61FDA76F000383359 /* Project object */;
+}

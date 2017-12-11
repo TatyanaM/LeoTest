@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
+            <connections>
+                <outlet property="searchBar" destination="NM9-SW-NXS" id="eHN-bZ-Eei"/>
+                <outlet property="searchDisplayController" destination="tln-dI-S0A" id="9oZ-AN-RSu"/>
+                <outlet property="tableView" destination="BnT-Pu-vgT" id="7T7-Wf-cLb"/>
+                <outlet property="view" destination="iN0-l3-epB" id="vua-TQ-mhC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" placeholder="Enter a word" translatesAutoresizingMaskIntoConstraints="NO" id="NM9-SW-NXS">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" red="0.30980392159999998" green="0.56078431370000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="JQD-RA-CrI"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BnT-Pu-vgT">
+                    <rect key="frame" x="0.0" y="56" width="375" height="611"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BnT-Pu-vgT" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="5jY-1p-uXN"/>
+                <constraint firstItem="BnT-Pu-vgT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8wP-OW-mic"/>
+                <constraint firstItem="NM9-SW-NXS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AHs-mN-b4M"/>
+                <constraint firstItem="NM9-SW-NXS" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="OLj-wQ-fr9"/>
+                <constraint firstItem="NM9-SW-NXS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RnA-Mj-6IX"/>
+                <constraint firstItem="BnT-Pu-vgT" firstAttribute="top" secondItem="NM9-SW-NXS" secondAttribute="bottom" id="mrA-hb-1tO"/>
+                <constraint firstItem="BnT-Pu-vgT" firstAttribute="top" secondItem="NM9-SW-NXS" secondAttribute="bottom" id="xeQ-Sw-m94"/>
+                <constraint firstItem="BnT-Pu-vgT" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="xyh-hX-bmr"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="543.5" y="117.5"/>
+        </view>
+        <searchDisplayController id="tln-dI-S0A">
+            <connections>
+                <outlet property="delegate" destination="-1" id="z7G-ux-QMZ"/>
+                <outlet property="searchContentsController" destination="-1" id="V1t-WC-E3t"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="6dh-1F-eNW"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="Tlp-Jo-BXn"/>
+            </connections>
+        </searchDisplayController>
+    </objects>
+</document>
