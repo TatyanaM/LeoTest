@@ -7,5 +7,4 @@
 //
 
 #import "Constants.h"
-#import <Masonry/Masonry.h>
 #import "AlertViewHelper.h"
